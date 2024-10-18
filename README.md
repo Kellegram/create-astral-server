@@ -17,7 +17,7 @@ This repository contains the necessary files to build a Docker container for lau
 4. Open rcon.yaml and put a matching password from your .env file. If you edited the rcon port, make sure to change it here too.
 
 ### Config files
-This container exposes the config folder as a docker volume. Unless you changed something, it should be located in `/var/lib/docker/volumes/`. Feel free to edit these as needed.
+This container exposes the config folder as a docker volume. Unless you changed something, it should be located in `/var/lib/docker/volumes/`. Feel free to edit these as needed. For now there is no way provided to merge config changes in updates with your custom changes. You will need to keep track yourself. Making a basic shell script that edits these configs with sed might be desirable and easier than manually re-doing it every time.
 
 ### Adding mods
 If you want to add additional mods to the server, the best way to do it would be to put them in the `extra_mods` folder. They will be copied over to the container for you. Just treat that folder as if it was the `mods/` folder on the server.
