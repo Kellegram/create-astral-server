@@ -1,7 +1,7 @@
 # Create: Astral server docker container
 
 ## Description
-This repository contains the necessary files to build a Docker container for launching a Minecraft server with the Create: Astral modpack, using GraalVM Java 17.
+This repository contains the necessary files to build a Docker container for launching a Minecraft server with the Create: Astral modpack, using GraalVM Java 17. This container allows for additional customisation to the server pack beyond the defaults.
 
 ## Instructions
 *This container assumes that you possess at least some basic knowledge of navigating the linux commandline. I will link some resources further down for command basics and docker basics.*
@@ -33,6 +33,8 @@ I do not own any of the software or mods contained in this repository. All right
 **Note:** This repository does not include any mods, modloaders, or the Create: Astral modpack directly. They will be downloaded during the container's startup process.
 
 ## Credits
+- This container is inspired by a similar [container](https://github.com/maxi0604/create-astral-container) by [maxi0604](https://github.com/maxi0604)
+
 - **[GraalVM Java 17](https://www.graalvm.org/)**: GraalVM is a high-performance runtime that provides significant improvements in application performance and efficiency. GraalVM is licensed under the Oracle Free Terms and Conditions (OFTC) for GraalVM Community Edition.
   
   - License: [GraalVM License](https://www.oracle.com/downloads/licenses/graal-free-license.html)

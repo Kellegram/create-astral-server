@@ -9,6 +9,8 @@ services:
       - astral-world:/data/world
       - astral-config:/data/config
       - astral-mods:/data/mods
+      - ./extra_mods:/extra_mods
+      - ./extra_datapacks:/extra_datapacks
 volumes:
   astral-world:
   astral-config:
