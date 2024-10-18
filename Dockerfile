@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM container-registry.oracle.com/graalvm/native-image:17 AS builder
+FROM container-registry.oracle.com/graalvm/native-image:17
 ARG TARGETPLATFORM
 
 RUN apt-get update && apt-get install -y curl jq unzip
@@ -41,5 +41,6 @@ RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods
     cp /tmp/client_pack/mods/vinery-1.1.4.jar mods/ && \
     cp /tmp/client_pack/mods/Hephaestus-1.18.2-3.5.2.155.jar mods/ && \
     mv /tmp/Log4jPatcher.jar . && \
-    curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.16.3/0.11.1/server/jar"
+    curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.16.3/0.11.1/server/jar" && \
+    rm -rf /tmp/{server_pack, client_pack, server_pack.zip, client_pack.zip}
 
