@@ -44,3 +44,5 @@ RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods
     curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.16.3/0.11.1/server/jar" && \
     rm -rf /tmp/{server_pack, client_pack, server_pack.zip, client_pack.zip}
 
+VOLUME [ "/data/world", "/data/config" "/data/mods" ]
+EXPOSE 25565
