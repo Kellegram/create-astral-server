@@ -8,7 +8,7 @@ This repository contains the necessary files to build a Docker container for lau
 
 ### Initial setup
 1. Clone the repository to an empty folder of your choice.
-2. Copy the examples from the [templates](templates/) folder to the root of the folder (removing the .example from the name) or use your own if you prepared them or are re-installing
+2. Copy the examples from the [`templates`](templates/) folder to the root of the folder (removing the .example from the name) or use your own if you prepared them or are re-installing
 3. Update the templates as appropriate for your server, keeping in mind the following:
 - You need to provide a password for rcon in the .env file. Also change default ram allocation for the server as needed.
 - `server.properties` only needs you to change options which are differnt to defaults (see https://server.properties for defaults), I provided the rcon related ones as you need to put a password that matches your .env file there
