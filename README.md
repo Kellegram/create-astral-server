@@ -16,6 +16,9 @@ This repository contains the necessary files to build a Docker container for lau
 - The templates are separated so that no one accidentally commits/PRs their actual secrets, keep the examples in templates folder as is
 4. Open rcon.yaml and put a matching password from your .env file. If you edited the rcon port, make sure to change it here too.
 
+### Config files
+This container exposes the config folder as a docker volume. Unless you changed something, it should be located in `/var/lib/docker/volumes/`. Feel free to edit these as needed.
+
 ### Adding mods
 If you want to add additional mods to the server, the best way to do it would be to put them in the `extra_mods` folder. They will be copied over to the container for you. Just treat that folder as if it was the `mods/` folder on the server.
 
