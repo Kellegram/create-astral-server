@@ -1,0 +1,2 @@
+# Add additional mods to the server pack
+This directory can be used to add any extra mods you need in the pack. Just put the files here as if this was the mods/ folder. Do not put anything else here that should not be in mods.
