@@ -12,7 +12,7 @@ This repository contains the necessary files to build a Docker container for lau
 3. Update the templates as appropriate for your server, keeping in mind the following:
 - You need to provide a password for rcon in the .env file. Also change default ram allocation for the server as needed.
 - `server.properties` only needs you to change options which are differnt to defaults (see https://server.properties for defaults), I provided the rcon related ones as you need to put a password that matches your .env file there
-- `ops.json` and `whitelist.json` are optional, make sure to actually change both the names and uuids. Feeel free to add more or less players there
+- `ops.json` and `whitelist.json` are optional, make sure to actually change both the names and uuids. Feel free to add more or less players there
 - The templates are separated so that no one accidentally commits/PRs their actual secrets, keep the examples in templates folder as is
 4. Open rcon.yaml and put a matching password from your .env file. If you edited the rcon port, make sure to change it here too.
 5. Once you are ready to run the container, simply run `docker compose up -d` in the root folder where you cloned the repo
