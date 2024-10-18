@@ -3,3 +3,4 @@ Dockerfile
 .gitignore
 README.md
 LICENSE
+extra_mods/
