@@ -17,6 +17,12 @@ This repository contains the necessary files to build a Docker container for lau
 4. Open rcon.yaml and put a matching password from your .env file. If you edited the rcon port, make sure to change it here too.
 
 
+## Learning Resources
+- [Docker basics](https://docker-curriculum.com/)
+- [Docker compose basics](https://docker-curriculum.com/#docker-compose)
+- [Docker manuals](https://docs.docker.com/manuals/)
+- [Linux commandline basics](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+
 ## Disclaimer
 I do not own any of the software or mods contained in this repository. All rights and ownership belong to their respective creators, as listed below.
 **Note:** This repository does not include any mods, modloaders, or the Create: Astral modpack directly. They will be downloaded during the container's startup process.
