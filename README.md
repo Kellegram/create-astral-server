@@ -15,6 +15,7 @@ This repository contains the necessary files to build a Docker container for lau
 - `ops.json` and `whitelist.json` are optional, make sure to actually change both the names and uuids. Feeel free to add more or less players there
 - The templates are separated so that no one accidentally commits/PRs their actual secrets, keep the examples in templates folder as is
 4. Open rcon.yaml and put a matching password from your .env file. If you edited the rcon port, make sure to change it here too.
+5. Once you are ready to run the container, simply run `docker compose up -d` in the root folder where you cloned the repo
 
 ### Config files
 This container exposes the config folder as a docker volume. Unless you changed something, it should be located in `/var/lib/docker/volumes/`. Feel free to edit these as needed. For now there is no way provided to merge config changes in updates with your custom changes. You will need to keep track yourself. Making a basic shell script that edits these configs with sed might be desirable and easier than manually re-doing it every time.
@@ -24,6 +25,7 @@ If you want to add additional mods to the server, the best way to do it would be
 
 ### Adding datapacks
 If you want to add additional datapacks to the server, the best way to do it would be to put them in the `extra_datapacks` folder. They will be copied over to the container for you. Just treat that folder as if it was the datapacks folder on the server.
+
 
 ## Learning Resources
 - [Docker basics](https://docker-curriculum.com/)
