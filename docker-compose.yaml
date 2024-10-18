@@ -1,0 +1,16 @@
+services:
+  create-astral:
+    environment:
+      EULA: "FALSE"
+      RCON_PASSWORD: "VeryInsecurePassword2$"
+    ports:
+      - 25565:25565
+    volumes:
+      - ./ops.json:/data/ops.json
+      - astral-world:/data/world
+      - astral-config:/data/config
+      - astral-mods:/data/mods
+volumes:
+  astral-world:
+  astral-config:
+  astral-mods:
