@@ -1,0 +1,6 @@
+# Minecraft server properties
+# This will be merged with server.properties file in the server
+# The following is required for rcon-cli to work, make sure to match the password with what you said in your .env file!
+enable_rcon=true
+rcon.password=CHANGE_ME
+rcon.port=25575

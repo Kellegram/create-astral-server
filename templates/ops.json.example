@@ -1,0 +1,14 @@
+[
+    {
+        "uuid": "abcd1234-56ef-78gh-90ij-klmnopqrstuv",
+        "name": "example_name",
+        "level": 4,
+        "bypassesPlayerLimit": false
+    },
+    {
+        "uuid": "wxyz9876-54vu-32ts-10rq-ponmlkjihgfe",
+        "name": "example_name",
+        "level": 4,
+        "bypassesPlayerLimit": false
+    }
+]
