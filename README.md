@@ -13,7 +13,7 @@ I do not own any of the software or mods contained in this repository. All right
 ## Credits
 - **[GraalVM Java 17](https://www.graalvm.org/)**: GraalVM is a high-performance runtime that provides significant improvements in application performance and efficiency. GraalVM is licensed under the Oracle Free Terms and Conditions (OFTC) for GraalVM Community Edition.
   
-  - License: [GraalVM License](https://www.graalvm.org/license/)
+  - License: [GraalVM License](https://www.oracle.com/downloads/licenses/graal-free-license.html)
   - Copyright © Oracle and/or its affiliates.
   
 - **[Fabric Modloader](https://fabricmc.net/)**: Fabric is a lightweight, experimental modding toolchain for Minecraft.
