@@ -1,4 +1,6 @@
 server.properties
 whitelist.json
+ops.json
+.env
 *.bak
 extra_mods/*
