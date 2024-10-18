@@ -3,7 +3,7 @@
 FROM container-registry.oracle.com/graalvm/native-image:17
 ARG TARGETPLATFORM
 
-RUN apt-get update && apt-get install -y curl jq
+RUN apt-get update && apt-get install -y curl jq unzip
 
 ENV RCON_CLI_VERSION="1.6.9"
 ENV GITHUB_REPO="itzg/rcon-cli"
@@ -27,4 +27,18 @@ RUN case "$TARGETPLATFORM" in \
     mv /tmp/$BINARY_NAME /usr/local/bin && \
     chmod +x /usr/local/bin/$BINARY_NAME && \
     rm /tmp/rcon-cli.tar.gz;
+
+WORKDIR /data
+RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5817679/download"
+# Newer client packs do not contain heph and vinery, but versions are the same
+RUN curl -fsSL -o "/tmp/client_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download"
+RUN curl -fsSL -o "/tmp/Log4jPatcher.jar https://github.com/CreeperHost/Log4jPatcher/releases/download/v1.0.1/Log4jPatcher-1.0.1.jar"
+RUN unzip -qq /tmp/server_pack.zip -d /tmp/server_pack/
+RUN unzip -qq /tmp/client_pack.zip -d /tmp/client_pack/
+# Avoid overwriting server.properties of existing server. This file will be re-created anyway if missing
+RUN rm /tmp/server_pack/server.properties
+RUN mv /tmp/server_pack/ .
+RUN cp /tmp/client_pack/mods/vinery-1.1.4.jar mods/
+RUN cp /tmp/client_pack/mods/Hephaestus-1.18.2-3.5.2.155.jar mods/
+RUN mv /tmp/Log4jPatcher.jar .
 
