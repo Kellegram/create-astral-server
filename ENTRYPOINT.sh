@@ -20,7 +20,7 @@ if [ "$EULA" = "TRUE" ]; then
 	fi
 
 	if [ -d "/extra_datapacks" ]; then
-		if [ ! -d "/data/datapacks" ] 
+		if [ ! -d "/data/datapacks" ]; then
 			mkdir -p /data/datapacks
 		fi
 		echo "Copying extra datapacks..."
