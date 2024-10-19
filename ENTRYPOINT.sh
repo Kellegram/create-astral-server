@@ -20,6 +20,9 @@ if [ "$EULA" = "TRUE" ]; then
 	fi
 
 	if [ -d "/extra_datapacks" ]; then
+		if [ ! -d "/data/world/datapacks/" ] 
+			mkdir -p /data/world/datapacks
+		fi
 		echo "Copying extra datapacks..."
 		cp -r /extra_datapacks/* /data/world/datapacks/
 	fi
