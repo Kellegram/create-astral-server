@@ -37,7 +37,7 @@ RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods
     unzip -qq /tmp/server_pack.zip -d /tmp/server_pack/ && \
     unzip -qq /tmp/client_pack.zip -d /tmp/client_pack/ && \
     rm /tmp/server_pack/server.properties && \
-    mv /tmp/server_pack/ . && \
+    mv /tmp/server_pack/* . && \
     cp /tmp/client_pack/mods/vinery-1.1.4.jar mods/ && \
     cp /tmp/client_pack/mods/Hephaestus-1.18.2-3.5.2.155.jar mods/ && \
     mv /tmp/Log4jPatcher.jar . && \
