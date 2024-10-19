@@ -1,5 +1,4 @@
 #!/bin/sh
-set -eo pipefail
 if [ "$EULA" = "TRUE" ]; then
 	echo "eula=true" > eula.txt
 
