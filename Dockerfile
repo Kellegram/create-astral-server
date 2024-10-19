@@ -46,3 +46,5 @@ RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods
 
 VOLUME [ "/data/world", "/data/config" "/data/mods" ]
 EXPOSE 25565
+
+ENTRYPOINT [ "/ENTRYPOINT.sh" ]
