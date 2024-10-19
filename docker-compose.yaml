@@ -1,5 +1,6 @@
 services:
   create-astral:
+    build: .
     environment:
       EULA: "FALSE"
     ports:
