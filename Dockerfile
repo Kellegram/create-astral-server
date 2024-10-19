@@ -23,7 +23,7 @@ RUN case "$TARGETPLATFORM" in \
     jq -r --arg PLATFORM "$PLATFORM"  '.assets[] | select(.name | endswith($PLATFORM + ".tar.gz")) | .browser_download_url') && \
     echo "Downloading $BINARY_NAME for $PLATFORM from $DOWNLOAD_URL" && \
     curl -L $DOWNLOAD_URL -o /tmp/rcon-cli.tar.gz && \
-    tar -xzvf /tmp/rcon-cli.tar.gz && \
+    tar -xzvf /tmp/rcon-cli.tar.gz -C /tmp/ && \
     mv /tmp/$BINARY_NAME /usr/local/bin && \
     chmod +x /usr/local/bin/$BINARY_NAME && \
     rm /tmp/rcon-cli.tar.gz;
