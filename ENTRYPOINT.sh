@@ -20,11 +20,11 @@ if [ "$EULA" = "TRUE" ]; then
 	fi
 
 	if [ -d "/extra_datapacks" ]; then
-		if [ ! -d "/data/world/datapacks/" ] 
-			mkdir -p /data/world/datapacks
+		if [ ! -d "/data/datapacks" ] 
+			mkdir -p /data/datapacks
 		fi
 		echo "Copying extra datapacks..."
-		cp -r /extra_datapacks/* /data/world/datapacks/
+		cp -r /extra_datapacks/* /data/datapacks/
 	fi
 
 	if [ -n "$ALLOCATED_RAM" ]; then
