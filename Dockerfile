@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
 
-FROM container-registry.oracle.com/graalvm/native-image:17
+FROM ghcr.io/graalvm/graalvm-community:17
 ARG TARGETPLATFORM
 
-RUN apt-get update && apt-get install -y curl jq unzip
+RUN microdnf install -y curl jq unzip && microdnf clean all
 
 ENV RCON_CLI_VERSION="1.6.9"
 ENV GITHUB_REPO="itzg/rcon-cli"
@@ -16,14 +16,14 @@ RUN case "$TARGETPLATFORM" in \
       "linux/arm/v7") PLATFORM="linux_armv7" ;; \
       "linux/arm/v6") PLATFORM="linux_armv6" ;; \
       "linux/386") PLATFORM="linux_386" ;; \
-      *) echo "Unsupported platform: $TARGETPLATFORM" && exit 0 ;; \
+      *) echo "Unsupported platform: $TARGETPLATFORM" && exit 1 ;; \
     esac && \
     echo "Detected platform: $PLATFORM" && \
     DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$GITHUB_REPO/releases/tags/$RCON_CLI_VERSION | \
     jq -r '.assets[] | select(.name | endswith($PLATFORM + ".tar.gz")) | .browser_download_url') && \
     echo "Downloading $BINARY_NAME for $PLATFORM from $DOWNLOAD_URL" && \
     curl -L $DOWNLOAD_URL -o /tmp/rcon-cli.tar.gz && \
-    tar -xz /tmp/rcon-cli.tar.gz \
+    tar -xz /tmp/rcon-cli.tar.gz && \
     mv /tmp/$BINARY_NAME /usr/local/bin && \
     chmod +x /usr/local/bin/$BINARY_NAME && \
     rm /tmp/rcon-cli.tar.gz;
