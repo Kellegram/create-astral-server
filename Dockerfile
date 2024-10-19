@@ -20,7 +20,7 @@ RUN case "$TARGETPLATFORM" in \
     esac && \
     echo "Detected platform: $PLATFORM" && \
     DOWNLOAD_URL=$(curl -s https://api.github.com/repos/$GITHUB_REPO/releases/tags/$RCON_CLI_VERSION | \
-    jq -r '.assets[] | select(.name | endswith($PLATFORM + ".tar.gz")) | .browser_download_url') && \
+    jq -r --arg PLATFORM "$PLATFORM"  '.assets[] | select(.name | endswith($PLATFORM + ".tar.gz")) | .browser_download_url') && \
     echo "Downloading $BINARY_NAME for $PLATFORM from $DOWNLOAD_URL" && \
     curl -L $DOWNLOAD_URL -o /tmp/rcon-cli.tar.gz && \
     tar -xz /tmp/rcon-cli.tar.gz && \
