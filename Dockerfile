@@ -33,7 +33,7 @@ WORKDIR /data
 # Avoid overwriting server.properties of existing server. This file will be re-created anyway if missing
 RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5817679/download" && \
     curl -fsSL -o "/tmp/client_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download" && \
-    curl -fsSL -o "/tmp/Log4jPatcher.jar https://github.com/CreeperHost/Log4jPatcher/releases/download/v1.0.1/Log4jPatcher-1.0.1.jar" && \
+    curl -fsSL -o "/tmp/Log4jPatcher.jar" "https://github.com/CreeperHost/Log4jPatcher/releases/download/v1.0.1/Log4jPatcher-1.0.1.jar" && \
     unzip -qq /tmp/server_pack.zip -d /tmp/server_pack/ && \
     unzip -qq /tmp/client_pack.zip -d /tmp/client_pack/ && \
     rm /tmp/server_pack/server.properties && \
