@@ -14,6 +14,7 @@ services:
       - astral-mods:/data/mods
       - ./extra_mods:/extra_mods
       - ./extra_datapacks:/extra_datapacks
+      - ./rcon.yaml:/etc/rcon.yaml
 volumes:
   astral-world:
   astral-config:
