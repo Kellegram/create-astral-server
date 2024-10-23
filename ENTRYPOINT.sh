@@ -4,11 +4,12 @@ if [ "$EULA" = "TRUE" ]; then
 
 	rm -f server.properties
 	[ -f "/init/server.properties" ] && cp /init/server.properties server.properties
-	touch server.properties
+
+	[ -f "/init/rcon.yaml" ] && cp /init/rcon.yaml /etc/rcon.yaml
 
 	if [ -n "$RCON_PASSWORD" ]; then
-		grep "^rcon.password" server.properties || echo "rcon.password=$RCON_PASSWORD" >>server.properties
-		grep "^enable-rcon" server.properties || echo "enable-rcon=true" >>server.properties
+		sed -i "s/^password:.*/password: $RCON_PASSWORD/" /etc/rcon.yaml
+		sed -i "s/^rcon.password=.*/rcon.password=$RCON_PASSWORD/" server.properties
 	fi
 
 	grep "^sync-chunk-writes" server.properties || echo "sync-chunk-writes=false" >>server.properties
