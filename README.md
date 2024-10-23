@@ -14,7 +14,8 @@ This repository contains the necessary files to build a Docker container for lau
    - `server.properties` only needs you to change options which are different to defaults (see https://server.properties for defaults), I provided the rcon related ones as you need to put a password that matches your `.env` file there
    - `ops.json` and `whitelist.json` are optional, make sure to actually change both the names and uuids. Feel free to add more or less players there
    - The templates are separated so that no one accidentally commits/PRs their actual secrets, keep the examples in templates folder as is
-4. Once you are ready to run the container, simply run `docker compose up -d` in the root folder where you cloned the repo
+4. Update the docker-compose.yaml file to accept the Mojang EULA if you wish to use the container
+5. Once you are ready to run the container, simply run `docker compose up -d` in the root folder where you cloned the repo
 
 ### Config files
 This container exposes the config folder as a docker volume. Unless you changed something, it should be located in `/var/lib/docker/volumes/`. Feel free to edit these as needed. For now there is no way provided to merge config changes in updates with your custom changes. You will need to keep track yourself. Making a basic shell script that edits these configs with sed might be desirable and easier than manually re-doing it every time.
