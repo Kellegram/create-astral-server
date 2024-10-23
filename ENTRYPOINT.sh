@@ -16,7 +16,7 @@ if [ "$EULA" = "TRUE" ]; then
 
 	if [ -d "/extra_mods" ]; then
 		echo "Copying extra mods..."
-		cp -r /extra_mods/* /data/mods/
+		rsync -av --exclude="README.md" --exclude=".gitignore" /extra_mods/ /data/mods/
 	fi
 
 	if [ -d "/extra_datapacks" ]; then
@@ -24,7 +24,7 @@ if [ "$EULA" = "TRUE" ]; then
 			mkdir -p /data/datapacks
 		fi
 		echo "Copying extra datapacks..."
-		cp -r /extra_datapacks/* /data/datapacks/
+		rsync -av --exclude="README.md" --exclude=".gitignore" /extra_datapacks/ /data/datapacks/
 	fi
 
 	if [ -n "$ALLOCATED_RAM" ]; then
