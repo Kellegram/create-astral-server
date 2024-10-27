@@ -2,9 +2,11 @@
 
 ## Description
 This repository contains the necessary files to build a Docker container for launching a Minecraft server with the Create: Astral modpack, using GraalVM Java 17. This container allows for additional customisation to the server pack beyond the defaults.
-I am not associated with the Create:Astral team and this repository is not endorsed by them. Please do not report any issues with this container in the Create:Astral repository or Discord server. Instead create an Issue in this repository or ping me in the Discord server.
 
 Current pack version: **2.1.1**
+
+**Disclaimer**: I am not associated with the Create:Astral team and this repository is not endorsed by them. Please do not report any issues with this container in the Create:Astral repository or Discord server. Instead create an Issue in this repository or ping me in the Discord server.
+
 
 ## Instructions
 *This container assumes that you possess at least some basic knowledge of navigating the linux commandline. I will link some resources further down for command basics and docker basics.*
