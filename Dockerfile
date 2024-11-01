@@ -31,7 +31,7 @@ RUN case "$TARGETPLATFORM" in \
 WORKDIR /data
 # Newer client packs do not contain heph and vinery, but versions are the same as in 2.0.4 so the 2 archived mods are taken from there
 # Avoid overwriting server.properties of existing server. This file will be re-created anyway if missing
-RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5817679/download" && \
+RUN curl -fsSL -o "/tmp/server_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5864156/download" && \
     curl -fsSL -o "/tmp/client_pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download" && \
     curl -fsSL -o "/tmp/Log4jPatcher.jar" "https://github.com/CreeperHost/Log4jPatcher/releases/download/v1.0.1/Log4jPatcher-1.0.1.jar" && \
     unzip -qq /tmp/server_pack.zip -d /tmp/server_pack/ && \
